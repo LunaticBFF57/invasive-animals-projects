@@ -1,21 +1,23 @@
+animal = 0 # 0 = prey, 1 = predator
+nearby_animal = 0
+radio.set_group(42)
+
 def on_received_number(receivedNumber):
     global nearby_animal
     nearby_animal = receivedNumber
 radio.on_received_number(on_received_number)
 
-# 0 = prey
-# 1 = predator
-nearby_animal = 0
-radio.set_group(42)
-animal = 0
-
 def on_forever():
-    if animal == 1:
+    global animal
+    global nearby_animal
+    if animal == 1: # predator
         radio.send_number(animal)
-        basic.pause(500)
-    elif animal == 0:
+        basic.pause(100)
+    elif animal == 0 : # prey
         radio.send_number(animal)
-        basic.pause(500)
+        basic.pause(100)
         if nearby_animal == 1:
+            pass
+        elif nearby_animal == 0:
             pass
 basic.forever(on_forever)
