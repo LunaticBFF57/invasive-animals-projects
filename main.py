@@ -16,8 +16,9 @@ def on_forever():
     elif animal == 0 : # prey
         radio.send_number(animal)
         basic.pause(100)
-        if nearby_animal == 1:
-            pass
-        elif nearby_animal == 0:
-            pass
+        if nearby_animal == 1: # predator
+            basic.show_icon(IconNames.NO)
+        elif nearby_animal == 0: # prey
+            basic.show_icon(IconNames.YES)
 basic.forever(on_forever)
+

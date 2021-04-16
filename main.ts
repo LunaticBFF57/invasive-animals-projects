@@ -18,9 +18,11 @@ basic.forever(function on_forever() {
         radio.sendNumber(animal)
         basic.pause(100)
         if (nearby_animal == 1) {
-            
+            //  predator
+            basic.showIcon(IconNames.No)
         } else if (nearby_animal == 0) {
-            
+            //  prey
+            basic.showIcon(IconNames.Yes)
         }
         
     }
