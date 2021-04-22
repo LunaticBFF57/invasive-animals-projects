@@ -1,24 +1,30 @@
-radio.onReceivedNumber(function (receivedNumber) {
-    nearby_animal = receivedNumber
-})
-/**
- * 0 = prey
- */
-/**
- * 1 = predator
- */
+let animal = 0
+//  0 = prey, 1 = predator
 let nearby_animal = 0
 radio.setGroup(42)
-basic.forever(function () {
-    let animal = 0
+radio.onReceivedNumber(function on_received_number(receivedNumber: number) {
+    
+    nearby_animal = receivedNumber
+})
+basic.forever(function on_forever() {
+    
+    
     if (animal == 1) {
+        //  predator
         radio.sendNumber(animal)
-        basic.pause(500)
+        basic.pause(100)
     } else if (animal == 0) {
+        //  prey
         radio.sendNumber(animal)
-        basic.pause(500)
+        basic.pause(100)
         if (nearby_animal == 1) {
-        	
+            //  predator
+            basic.showIcon(IconNames.No)
+        } else if (nearby_animal == 0) {
+            //  prey
+            basic.showIcon(IconNames.Yes)
         }
+        
     }
+    
 })

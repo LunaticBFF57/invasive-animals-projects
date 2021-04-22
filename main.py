@@ -21,4 +21,3 @@ def on_forever():
         elif nearby_animal == 0: # prey
             basic.show_icon(IconNames.YES)
 basic.forever(on_forever)
-

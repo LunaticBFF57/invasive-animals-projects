@@ -12,10 +12,11 @@
         "main.blocks",
         "main.ts",
         "test.ts",
-        "tsconfig.json"
+        "tsconfig.json",
+        "main.py"
     ],
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "pyprj"
 }
