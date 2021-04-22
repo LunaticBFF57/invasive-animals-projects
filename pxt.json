@@ -1,24 +1,21 @@
 {
-    "name": "invasive animals projects",
-    "description": "",
+    "name": "invasive-animals-projects",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*",
-        "servo": "*"
+        "microphone": "*"
     },
     "files": [
+        ".vscode/settings.json",
+        ".vscode/tasks.json",
+        "README.md",
         "main.blocks",
         "main.ts",
-        "README.md",
-        "main.py",
-        null
-    ],
-    "testFiles": [
-        "test.ts"
+        "test.ts",
+        "tsconfig.json"
     ],
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "pyprj"
+    "preferredEditor": "blocksprj"
 }
